@@ -1,0 +1,115 @@
+/* PatientNavbar.css */
+
+header {
+  background-color: #0b2b4c; /* Dark blue */
+  color: white;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 14px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo Section */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo .icon {
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  color: #0b2b4c;
+  font-weight: bold;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo h1 {
+  font-size: 20px;
+  font-weight: 600;
+  color: white;
+}
+
+/* Navigation Links */
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+nav a:hover {
+  color: #00d084; /* Green hover */
+}
+
+/* Logout Button */
+button.logout-btn {
+  background-color: #dc2626; /* red */
+  color: white;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+button.logout-btn:hover {
+  background-color: #b91c1c;
+}
+
+/* Login & Signup Buttons */
+.loogin-btn,
+.signnup-btn {
+  font-size: 0.7rem;       /* farta yar */
+  display: inline-block;    /* horizontal */
+  margin-left: 4px;
+  margin-right: 4px;
+  padding: 4px 10px;        /* compact */
+  border-radius: 6px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  background-color: #10b981; /* green */
+  color: white;
+  border: none;
+}
+
+.loogin-btn:hover,
+.signnup-btn:hover {
+  background-color: #059669; /* darker green hover */
+}
+/* PatientNavbar.css */
+
+/* Navbar links */
+nav a {
+  color: #fff;
+  text-decoration: none;
+  margin-right: 20px;
+  transition: color 0.3s;
+}
+
+/* Hover effect */
+nav a:hover {
+  color: #00d084;
+}
+
+/* Active page link */
+nav a.active {
+  color: #00d084;
+  border-bottom: 2px solid #00d084;
+  padding-bottom: 2px;
+}

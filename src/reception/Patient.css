@@ -1,0 +1,310 @@
+.patients-wrapper {
+  padding: 2rem;
+  font-family: Arial, sans-serif;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.top-buttons {
+  margin-bottom: 1.5rem;
+}
+
+.top-buttons button {
+  padding: 0.5rem 1rem;
+  margin-right: 0.5rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  background-color: #10b981;
+  color: #fff;
+}
+
+.form-card {
+  max-width: 500px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.form-card input, .form-card select {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+  border: 1px solid #d1d5db;
+}
+
+.form-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.form-buttons button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.form-buttons .cancel-btn {
+  background-color: #ef4444;
+}
+
+.form-buttons button:first-child {
+  background-color: #3b82f6;
+}
+
+/* Table */
+.patients-table-wrapper {
+  overflow-x: auto;
+}
+
+.patients-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.patients-table th, .patients-table td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.patients-table th {
+  background-color: #10b981;
+  color: white;
+}
+
+.patients-table tr:hover {
+  background-color: #f1f5f9;
+}
+
+/* Actions buttons aligned horizontally */
+.action-buttons {
+  display: flex;
+  gap: 0.3rem;
+}
+
+.action-buttons button {
+  padding: 0.3rem 0.6rem;
+  border-radius: 5px;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
+.action-buttons button:first-child {
+  background-color: #3b82f6; /* Edit */
+}
+
+.action-buttons .delete-btn {
+  background-color: #ef4444; /* Delete */
+}
+.patients-wrapper {
+  padding: 2rem;
+  font-family: Arial, sans-serif;
+  min-height: 100vh;
+}
+
+.top-buttons button {
+  margin-right: 10px;
+  padding: 8px 16px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.form-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  margin-top: 20px;
+}
+
+.form-card {
+  background: #fff;
+  padding: 25px 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+  width: 400px; /* width la xadiday */
+  max-width: 90%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+}
+
+.form-card h2 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.form-card input,
+.form-card select {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.form-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-buttons button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.form-buttons .cancel-btn {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+.form-buttons button:not(.cancel-btn) {
+  background-color: #4e73df;
+  color: #fff;
+}
+
+
+
+.form-card input, .form-card select {
+  display: block;
+  margin: 10px 0;
+  padding: 8px 12px;
+  width: 100%;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.overlayy {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* mugdi dusha ka muuqda */
+  z-index: 999; /* modal-ka ka hooseeya */
+}
+
+
+.form-buttons button {
+  margin-right: 10px;
+  padding: 8px 16px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+
+.cancel-btn { background-color: #6b7280; color: white; }
+
+.patients-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.patients-table th, .patients-table td {
+  padding: 12px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.action-buttons button {
+  margin-right: 5px;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.delete-btn { background-color: #ef4444; color: white; }
+.delete-btn.deleted { background-color: #9ca3af; cursor: default; }
+
+.action-buttons button.updated { background-color: #10b981; color: white; cursor: default; }
+
+.toast {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 12px 20px;
+  border-radius: 6px;
+  color: #fff;
+  font-weight: bold;
+  z-index: 100;
+}
+
+.toast.success { background-color: #10b981; }
+.toast.error { background-color: #ef4444; }
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 200;
+}
+
+.modal-card {
+  background-color: #fff;
+  padding: 20px 30px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.modal-buttons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.confirm-btn {
+  background-color: #ef4444;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+
+.cancel-btn {
+  background-color: #6b7280;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}

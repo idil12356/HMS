@@ -1,0 +1,94 @@
+/* LOGIN PAGE AREA */
+/* LOGIN PAGE AREA */
+.login-page {
+  width: 100%;
+  height: 100vh;
+    background: url("../assets/hospital_room.jpg") center/cover no-repeat;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.login-page .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 34, 68, 0.65);
+}
+
+/* LOGIN BOX */
+.login-box {
+  position: relative;
+  width: 420px;
+  background: #fff;
+  padding: 40px;
+  border-radius: 10px;
+  z-index: 2;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  text-align: center;
+}
+
+.logo-text {
+  font-size: 32px;
+  letter-spacing: 3px;
+  margin-bottom: 10px;
+  font-weight: 700;
+  color: #222;
+}
+
+.desc {
+  font-size: 13px;
+  margin-bottom: 25px;
+  color: #666;
+}
+
+/* INPUTS */
+.login-box input {
+  width: 100%;
+  padding: 12px 14px;
+  margin-top: 6px;
+  margin-bottom: 18px;
+  border: 1px solid #dcdcdc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.login-box label {
+  text-align: left;
+  width: 100%;
+  display: block;
+  font-size: 13px;
+  margin-bottom: 3px;
+  color: #444;
+}
+
+/* BUTTON */
+.login-btn {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  background: #6a5bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.login-btn:hover {
+  opacity: 0.9;
+}
+
+/* FORGOT LINK */
+.forgot {
+  display: block;
+  margin-top: 14px;
+  font-size: 13px;
+  color: #666;
+  text-decoration: none;
+}

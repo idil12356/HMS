@@ -1,0 +1,202 @@
+/* PAGE CONTAINER */
+.records-container {
+  padding: 20px;
+}
+
+/* TITLE */
+.records-title {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* PATIENT LIST */
+.record-list {
+  display: grid;
+  gap: 15px;
+}
+
+.record-card {
+  background: #ffffff;
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid #e2e2e2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.record-name {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.record-info {
+  font-size: 14px;
+  color: #666;
+}
+
+.record-btn {
+  background: #2563eb;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 6px;
+  border: none;
+}
+
+/* MODAL */
+.records-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 5000;
+}
+
+.records-modal-box {
+  background: white;
+  width: 450px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.records-modal-title {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+/* TEXT AREA */
+.records-input {
+  width: 100%;
+  height: 80px;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  margin-bottom: 15px;
+}
+
+/* VIEW MODE OUTPUT */
+.records-output {
+  background: #f5f5f5;
+  padding: 12px;
+  border-radius: 6px;
+  margin-bottom: 15px;
+}
+
+/* BUTTONS */
+.records-button-row {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.records-save-btn {
+  background: #16a34a;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 6px;
+  border: none;
+}
+
+.records-close-btn {
+  background: #dc2626;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 6px;
+  border: none;
+}
+
+/* SUCCESS POPUP */
+.records-success-popup {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #16a34a;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  z-index: 9999;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+  animation: fadeInOut 3s ease;
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: translateX(-50%) translateY(-10px); }
+  10% { opacity: 1; transform: translateX(-50%) translateY(0); }
+  90% { opacity: 1; }
+  100% { opacity: 0; }
+}
+/* SUCCESS TOAST */
+.record-toast {
+  position: fixed;
+  top: 25px;
+  right: 25px;
+  background: #22c55e; /* green 500 */
+  color: white;
+  padding: 14px 22px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 9999;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.25);
+  animation: toastSlideIn 0.4s ease, toastFadeOut 3s ease forwards;
+}
+
+.record-toast-icon {
+  background: white;
+  color: #22c55e;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Slide in animation */
+@keyframes toastSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(40px) translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) translateY(0);
+  }
+}
+
+/* Fade out smoothly */
+@keyframes toastFadeOut {
+  0% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { opacity: 0; transform: translateX(40px); }
+}
+.records-search {
+  width: 100%;
+  max-width: 400px;
+  padding: 12px 15px;
+  border: 1.5px solid #d0d7e6;
+  border-radius: 10px;
+  background: #f7f9fc;
+  outline: none;
+  font-size: 15px;
+  transition: 0.25s;
+  margin-bottom: 20px;
+}
+
+.records-search:focus {
+  border-color: #2e8bff;
+  background: #fff;
+  box-shadow: 0 3px 8px rgba(46, 139, 255, 0.25);
+}
+

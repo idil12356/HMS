@@ -1,0 +1,140 @@
+/* Qaybta guud */
+.appointments-container {
+  position: relative; /* muhiim pseudo-element overlay */
+  margin: 0px auto;
+  height: 550px;
+  width: 1264px;
+  padding: 0px;
+  border-radius: 15px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden; /* si overlay uusan ka bixin container */
+  color: #fff; /* qoraalka cad */
+  background: url('../assets/book1.jpg') center/cover no-repeat; /* sawirka buuxa */
+}
+
+/* Overlay semi-transparent blue */
+.appointments-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(52, 152, 219, 0.5); /* blue overlay */
+  z-index: 1;
+}
+
+/* Qoraalka iyo table-ka overlay ka sarreeya */
+.appointments-container * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Title */
+.appointments-container h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+/* Table design */
+.appointments-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 16px;
+}
+
+.appointments-table th,
+.appointments-table td {
+  padding: 12px 15px;
+  border-bottom: 1px solid rgba(255,255,255,0.3);
+  text-align: center;
+  color: #fff;
+}
+
+.appointments-table th {
+  background-color: rgba(11, 43, 76, 0.8);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* Hover row */
+.appointments-table tr:hover {
+  background-color: rgba(41, 128, 185, 0.7);
+  color: #fff;
+}
+
+/* Modal overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 25px 30px;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.modal-actions {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.confirm-btn {
+  background-color: #e74a3b;
+  color: #fff;
+  padding: 8px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.cancel-btn {
+  background-color: #6c757d;
+  color: #fff;
+  padding: 8px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Status general */
+.status {
+  font-weight: bold;
+  color: #fff !important; /* qoraal cad dhamaan status-ka */
+  padding: 4px 10px;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+/* Status specific colors */
+.status.confirmed {
+  background-color: #2ecc71; /* green */
+}
+
+.status.pending {
+  background-color: #f1c40f; /* yellow/orange */
+}
+
+.status.cancelled {
+  background-color: #e74a3b; /* red */
+}
+
+.status.completed {
+  background-color: #3498db; /* blue */
+}

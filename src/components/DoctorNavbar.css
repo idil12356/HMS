@@ -1,0 +1,21 @@
+/* DoctorNavbar.css / PatientNavbar.css */
+
+/* Navbar links */
+nav a {
+  color: #fff;
+  text-decoration: none;
+  margin-right: 20px;
+  transition: color 0.3s;
+}
+
+/* Hover effect */
+nav a:hover {
+  color: #00d084;
+}
+
+/* Active page link */
+nav a.active {
+  color: #00d084;
+  border-bottom: 2px solid #00d084;
+  padding-bottom: 2px;
+}

@@ -1,0 +1,90 @@
+.history-container {
+  width: 100%;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.history-title {
+  font-size: 26px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.loading-text,
+.no-records {
+  font-size: 16px;
+  padding: 20px;
+  text-align: center;
+  color: #666;
+}
+
+.history-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.history-table thead {
+  background: #007bff;
+  color: white;
+}
+
+.history-table th,
+.history-table td {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+  text-align: left;
+  font-size: 14px;
+}
+
+.history-table tr:hover {
+  background: #f8f9ff;
+}
+
+/* STATUS COLORS */
+.status {
+  padding: 5px 10px;
+  border-radius: 6px;
+  font-weight: bold;
+  text-transform: capitalize;
+  text-align: center;
+}
+
+.status.pending {
+  background: #fff3cd;
+  color: #856404;
+}
+
+.status.approved {
+  background: #c3f7d1;
+  color: #137a2a;
+}
+
+.status.completed {
+  background: #cce5ff;
+  color: #004085;
+}
+
+/* Responsive */
+@media (max-width: 850px) {
+  .history-table {
+    font-size: 12px;
+  }
+
+  .history-table th,
+  .history-table td {
+    padding: 8px;
+  }
+}
+
+@media (max-width: 600px) {
+  .history-table {
+    display: block;
+    overflow-x: auto;
+  }
+}

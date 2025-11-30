@@ -1,0 +1,112 @@
+/* HEADER */
+.rec-header {
+  background: #0b2b4c;   /* 👈 COLOR NEW */
+  padding: 15px 0;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  border-bottom: 1px solid #062033;
+}
+
+/* Container */
+.rec-container {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo */
+.rec-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.rec-logo h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: white; /* 👈 LOGO TEXT WHITE */
+}
+
+.rec-icon {
+  background: #ffffff;
+  color: #0b2b4c;
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+/* Navigation */
+.rec-nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.rec-nav a {
+  text-decoration: none;
+  color: white;   /* 👈 NAV TEXT WHITE */
+  transition: 0.2s;
+  font-weight: 500;
+}
+
+.rec-nav a:hover {
+  color: #00d084;
+}
+
+/* Welcome Text */
+.rec-welcome {
+  font-weight: 600;
+  margin-right: 10px;
+  color: #00d084; /* 👈 Highlight green */
+}
+
+/* Buttons */
+.rec-btn {
+  padding: 8px 15px;
+  border-radius: 6px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+}
+
+.login {
+  background: #00d084;
+  color: white;
+}
+
+.signup {
+  border: 2px solid #00d084;
+  color: #00d084;
+  background: white;
+}
+
+.logout {
+  background: #ff4d4d;
+  color: white;
+}
+/* ReceptionistNavbar.css */
+
+/* Navbar links */
+.rec-nav a {
+  color: #fff;
+  text-decoration: none;
+  margin-right: 20px;
+  transition: color 0.3s;
+}
+
+/* Hover effect */
+.rec-nav a:hover {
+  color: #00d084;
+}
+
+/* Active page link */
+.rec-nav a.active {
+  color: #00d084;
+  border-bottom: 2px solid #00d084;
+  padding-bottom: 2px;
+}
+

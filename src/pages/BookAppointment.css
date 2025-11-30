@@ -1,0 +1,77 @@
+.appointment-container {
+  max-width: 500px;
+  width: 100%;
+  padding: 30px;
+  background-color: rgba(11, 43, 76, 0.88);
+  color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+
+.book-appointment-page {
+  position: relative;
+  min-height: 100vh;
+  padding: 20px;
+
+  /* Sawirka ka yimid JSX */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  transition: all 0.4s ease-in-out;
+  overflow: hidden;
+}
+/* HOVER EFFECT */
+.book-appointment-page:hover::after {
+  opacity: 1; /* Blue overlay appears */
+}
+
+.appointment-container {
+  position: relative;
+  z-index: 5;
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 30px;
+  background-color: rgba(11, 43, 76, 0.85);
+  border-radius: 10px;
+  color: white;
+}
+
+.appointment-form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.appointment-form input,
+.appointment-form select,
+.appointment-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: none;
+  font-size: 16px;
+}
+
+.appointment-form input[type="submit"] {
+  background-color: #f7941d;
+  color: #fff;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.appointment-form input[type="submit"]:hover {
+  background-color: #e68300;
+}
+
+.confirmation-message {
+  text-align: center;
+  margin-top: 20px;
+  background-color: #28a745;
+  padding: 10px;
+  border-radius: 5px;
+  font-weight: bold;
+}

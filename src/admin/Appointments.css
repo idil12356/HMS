@@ -1,0 +1,200 @@
+/* Appointments.css - styles for Appointments page */
+
+:root {
+  --bg: #f6f9fb;
+  --card: #ffffff;
+  --muted: #6b7280;
+  --accent: #2563eb;
+  --success: #16a34a;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+  --border: #e6eefc;
+  --text: #0f172a;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial; background: var(--bg); color: var(--text); }
+
+.appointments-wrapper {
+  padding: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: 80vh;
+}
+
+.appointments-title {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  text-align: left;
+}
+
+/* Table */
+.table-wrap {
+  background: var(--card);
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(15,23,42,0.06);
+  overflow: auto;
+}
+
+.apt-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 900px;
+}
+
+.apt-table thead th {
+  background: #f1f7ff;
+  padding: 12px 14px;
+  text-align: left;
+  font-weight: 700;
+  border-bottom: 1px solid var(--border);
+}
+
+.apt-table tbody td {
+  padding: 12px 14px;
+  border-bottom: 1px solid #f1f5f9;
+  vertical-align: middle;
+}
+
+/* patient cell */
+.patient-cell .patient-name {
+  font-weight: 700;
+}
+.patient-cell .patient-phone {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+/* doctor cell */
+.doctor-cell {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.doctor-thumb {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+.doctor-thumb.placeholder {
+  background: #e6eefc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}
+
+/* status badges */
+.status-badge {
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 13px;
+  text-transform: capitalize;
+}
+.status-badge.pending { background: #fef3c7; color: #92400e; }
+.status-badge.confirmed { background: #dbeafe; color: #1e3a8a; }
+.status-badge.completed { background: #dcfce7; color: #166534; }
+
+/* action buttons */
+.action-buttons {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.btn {
+  padding: 7px 10px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 13px;
+}
+.btn-view { background: #60a5fa; color: white; }
+.btn-edit { background: #fbbf24; color: #111; }
+.btn-delete { background: #ef4444; color: white; }
+
+/* selects for assign and status */
+.doctor-select, .status-select {
+  padding: 7px 10px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: white;
+  font-weight: 600;
+}
+
+/* modal */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(2,6,23,0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 9999;
+}
+.modal-card {
+  width: 520px;
+  max-width: 100%;
+  background: var(--card);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 14px 40px rgba(2,6,23,0.2);
+}
+.modal-card.large { max-height: 85vh; overflow: auto; }
+
+.modal-card h3 { margin-top: 0; margin-bottom: 8px; }
+
+.view-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  margin-top: 12px;
+}
+.view-grid .notes { white-space: pre-wrap; color: var(--muted); }
+
+/* form inputs */
+.modal-card label { display: block; margin-top: 10px; font-weight: 700; }
+.modal-card input[type="text"], .modal-card input[type="email"], .modal-card input[type="date"], .modal-card input[type="time"], .modal-card textarea, .modal-card select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 6px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  font-size: 14px;
+}
+
+/* textarea */
+.modal-card textarea { min-height: 80px; resize: vertical; }
+
+/* modal actions */
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 14px;
+}
+.modal-btn {
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-weight: 800;
+  border: none;
+  cursor: pointer;
+}
+.modal-btn.save { background: var(--accent); color: white; }
+.modal-btn.close { background: #f3f4f6; color: #111827; }
+
+/* responsive */
+@media (max-width: 900px) {
+  .view-grid { grid-template-columns: 1fr; }
+  .apt-table { min-width: 700px; }
+}
+@media (max-width: 520px) {
+  .apt-table { min-width: 600px; }
+  .appointments-wrapper { padding: 12px; }
+}

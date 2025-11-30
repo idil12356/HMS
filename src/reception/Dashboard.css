@@ -1,0 +1,10 @@
+.error-box {
+  background: #ffe6e6;
+  color: #b30000;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ff9999;
+  margin-bottom: 10px;
+  text-align: center;
+  font-weight: bold;
+}

@@ -1,0 +1,138 @@
+/* PAGE WRAPPER */
+.p-6 {
+  padding: 1.5rem;
+}
+
+.max-w-4xl {
+  max-width: 56rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.space-y-4 > * + * {
+  margin-top: 1rem;
+}
+
+/* CARD */
+.bg-white {
+  background: #fff;
+}
+
+.shadow {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.rounded {
+  border-radius: 10px;
+}
+
+.p-4 {
+  padding: 1rem;
+}
+
+.text-lg {
+  font-size: 1.125rem;
+}
+
+.font-semibold {
+  font-weight: 600;
+}
+
+.text-gray-600 {
+  color: #666;
+}
+
+/* BUTTONS */
+button {
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.bg-indigo-600 {
+  background: #4f46e5;
+  color: white;
+}
+.bg-indigo-600:hover {
+  background: #4338ca;
+}
+
+.bg-green-600 {
+  background: #16a34a;
+  color: white;
+}
+.bg-green-600:hover {
+  background: #15803d;
+}
+
+.bg-purple-600 {
+  background: #7c3aed;
+  color: white;
+}
+.bg-purple-600:hover {
+  background: #6d28d9;
+}
+
+.bg-gray-300 {
+  background: #d1d5db;
+}
+.bg-gray-300:hover {
+  background: #c5c9d0;
+}
+
+/* MODAL */
+.fixed {
+  position: fixed;
+}
+
+.inset-0 {
+  inset: 0;
+}
+
+.bg-opacity-40 {
+  background: rgba(0,0,0,0.4);
+}
+
+.p-6 {
+  padding: 1.5rem;
+}
+
+.max-w-md {
+  max-width: 28rem;
+}
+
+.border {
+  border: 1px solid #ccc;
+}
+
+.rounded {
+  border-radius: 8px;
+}
+
+.mt-4 {
+  margin-top: 1rem;
+}
+
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
+
+.w-full {
+  width: 100%;
+}
+
+/* INPUT */
+input {
+  font-size: 15px;
+}
+
+/* TITLE */
+.text-3xl {
+  font-size: 1.875rem;
+  font-weight: 700;
+}
+
+.text-xl {
+  font-size: 1.25rem;
+  font-weight: 700;
+}

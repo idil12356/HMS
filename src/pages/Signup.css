@@ -1,0 +1,89 @@
+.signup-bg {
+  width: 100%;
+  min-height: 100vh;
+  background: url("../assets/hospital_room.jpg") center/cover no-repeat;
+
+  position: relative; /* si overlay uga shaqeeyo */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding-top: 60px;
+  padding-bottom: 60px;
+
+  box-sizing: border-box;
+}
+
+/* 🔵 DARK OVERLAY */
+.signup-bg::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 34, 68, 0.65); /* same color as login */
+  z-index: 1;
+}
+
+/* SIGNUP BOX */
+.signup-box {
+  background: white;
+  width: 420px;
+  padding: 35px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);
+  margin-top: 20px;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 2; /* si overlay uusan dusha uga iman */
+}
+
+.signup-title {
+  font-size: 36px;
+  letter-spacing: 10px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.signup-subtitle {
+  color: #666;
+  margin-bottom: 20px;
+  font-size: 15px;
+}
+
+.signup-box input,
+.signup-box select {
+  width: 100%;
+  height: 45px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 10px;
+  background: #eef3ff;
+  font-size: 14px;
+}
+
+.signup-btn {
+  width: 100%;
+  height: 48px;
+  background: #5a47ff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.signup-btn:hover {
+  background: #4734d1;
+}
+
+.signup-message {
+  margin-top: 15px;
+  color: green;
+  font-size: 14px;
+}
