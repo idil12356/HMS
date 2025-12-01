@@ -113,3 +113,118 @@ nav a.active {
   border-bottom: 2px solid #00d084;
   padding-bottom: 2px;
 }
+
+/* ============================
+   RESPONSIVE — Patient Navbar
+============================ */
+
+@media (max-width: 768px) {
+
+  /* Hide links on mobile */
+  nav {
+    position: absolute;
+    top: 65px;
+    right: 0;
+    width: 100%;
+    background: #0b2b4c;
+    display: none;
+    flex-direction: column;
+    padding: 20px 0;
+    text-align: center;
+    gap: 15px;
+    border-top: 1px solid #062033;
+  }
+
+  /* Show when menuOpen = true */
+  nav.open {
+    display: flex;
+  }
+
+  /* Links appearance */
+  nav a {
+    margin: 10px 0;
+    font-size: 16px;
+  }
+
+  /* Hamburger appears only mobile */
+  .menu-toggle {
+    display: block;
+    font-size: 28px;
+    cursor: pointer;
+    color: white;
+  }
+
+  /* Login & Signup buttons mobile layout */
+  .loogin-btn,
+  .signnup-btn {
+    width: 80%;
+    margin: 0 auto;
+    font-size: 14px;
+    padding: 8px 0;
+  }
+
+  /* Logout button full width */
+  .logout-btn {
+    width: 80%;
+    margin: 10px auto;
+  }
+
+  /* Welcome text spacing */
+  .welcome-user {
+    display: block;
+    margin-top: 12px;
+    color: #00d084;
+    font-weight: 600;
+  }
+}
+
+/* Desktop */
+@media (min-width: 769px) {
+  .menu-toggle {
+    display: none; /* hide hamburger */
+  }
+
+  nav {
+    display: flex !important; /* keep desktop layout */
+    position: static;
+    flex-direction: row;
+    background: none;
+    padding: 0;
+  }
+}
+
+/* PatientNavbar.css - responsive for admin only */
+.admin-navbar .menu-toggle {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .admin-navbar nav {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 100%;
+    flex-direction: column;
+    padding: 20px 0;
+    display: none;
+    text-align: center;
+    background-color: #0b2b4c;
+  }
+
+  .admin-navbar nav.open {
+    display: flex;
+  }
+
+  .admin-navbar .menu-toggle {
+    display: block;
+  }
+
+  .admin-navbar .nav-btn {
+    width: 80%;
+    margin: 10px auto;
+  }
+
+  .admin-navbar .welcome-user {
+    margin-top: 10px;
+  }
+}

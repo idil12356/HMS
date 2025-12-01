@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
-import "./PatientNavbar.css"; // design-ka asalka ah
+import "./PatientNavbar.css"; // shared styles
 import { supabase } from "../supabaseClient";
 
 export default function AdminNavbar({ admin, setAdmin }) {
   const navigate = useNavigate();
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const handleLogout = async () => {
     await supabase.auth.signOut();
@@ -13,8 +14,9 @@ export default function AdminNavbar({ admin, setAdmin }) {
   };
 
   return (
-    <header>
+    <header className="admin-navbar">
       <div className="container">
+
         {/* Logo */}
         <div className="logo">
           <div className="icon">AD</div>
@@ -23,19 +25,37 @@ export default function AdminNavbar({ admin, setAdmin }) {
           </h1>
         </div>
 
+        {/* Hamburger Button */}
+        <div className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
+          ☰
+        </div>
+
         {/* Navigation Links */}
-        <nav>
-          <NavLink to="/admin/dashboard" className={({ isActive }) => isActive ? "active" : ""}>
+        <nav className={menuOpen ? "open" : ""}>
+          <NavLink
+            to="/admin/dashboard"
+            className={({ isActive }) => (isActive ? "active" : "")}
+            onClick={() => setMenuOpen(false)}
+          >
             Dashboard
           </NavLink>
-          <NavLink to="/admin/manage-users" className={({ isActive }) => isActive ? "active" : ""}>
+
+          <NavLink
+            to="/admin/manage-users"
+            className={({ isActive }) => (isActive ? "active" : "")}
+            onClick={() => setMenuOpen(false)}
+          >
             Manage Users
           </NavLink>
-          <NavLink to="/admin/appointments" className={({ isActive }) => isActive ? "active" : ""}>
+
+          <NavLink
+            to="/admin/appointments"
+            className={({ isActive }) => (isActive ? "active" : "")}
+            onClick={() => setMenuOpen(false)}
+          >
             Appointments
           </NavLink>
 
-          {/* Admin Section */}
           {admin ? (
             <>
               <span className="welcome-user">Welcome, {admin.username}</span>
@@ -45,10 +65,19 @@ export default function AdminNavbar({ admin, setAdmin }) {
             </>
           ) : (
             <>
-              <NavLink to="/login" className="nav-btn login-btn">
+              <NavLink
+                to="/login"
+                className="nav-btn login-btn"
+                onClick={() => setMenuOpen(false)}
+              >
                 Login
               </NavLink>
-              <NavLink to="/signup" className="nav-btn signup-btn">
+
+              <NavLink
+                to="/signup"
+                className="nav-btn signup-btn"
+                onClick={() => setMenuOpen(false)}
+              >
                 Signup
               </NavLink>
             </>

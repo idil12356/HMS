@@ -19,3 +19,74 @@ nav a.active {
   border-bottom: 2px solid #00d084;
   padding-bottom: 2px;
 }
+
+/* ============================
+   RESPONSIVE — Doctor Navbar
+============================ */
+
+@media (max-width: 768px) {
+
+  /* MOBILE ONLY nav menu hidden */
+  nav {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 100%;
+    background: #0b2b4c;
+    display: none !important;    /* IMPORTANT MOBILE ONLY */
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+    padding: 20px 0;
+    border-top: 1px solid #062033;
+  }
+
+  /* Show menu when open */
+  nav.open {
+    display: flex !important;
+  }
+
+  nav a {
+    margin: 10px 0;
+    font-size: 16px;
+  }
+
+  .menu-toggle {
+    display: block;
+    font-size: 28px;
+    cursor: pointer;
+    color: white;
+  }
+
+  .welcome-user {
+    display: block;
+    margin-top: 10px;
+    color: #00d084;
+  }
+
+  .login-btn,
+  .signup-btn,
+  .logout-btn {
+    width: 80%;
+    margin: 8px auto;
+    padding: 8px 0;
+    font-size: 14px;
+    text-align: center;
+  }
+}
+
+/* DESKTOP — normal behavior */
+@media (min-width: 769px) {
+
+  nav {
+    display: flex !important;        /* Keep desktop layout */
+    position: static !important;
+    flex-direction: row !important;
+    background: none !important;
+    padding: 0 !important;
+  }
+
+  .menu-toggle {
+    display: none;   /* Hide hamburger on large screens */
+  }
+}

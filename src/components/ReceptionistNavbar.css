@@ -110,3 +110,68 @@
   padding-bottom: 2px;
 }
 
+/* ============================
+   RESPONSIVE ONLY FOR RECEPTION NAVBAR
+============================ */
+
+@media (max-width: 768px) {
+
+  /* Container stays aligned */
+  .rec-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* Show hamburger only for reception */
+  .rec-menu-toggle {
+    display: block;
+    font-size: 26px;
+    color: #fff;
+    cursor: pointer;
+  }
+
+  /* Hide nav initially */
+  .rec-nav {
+    display: none;
+    position: absolute;
+    top: 65px;
+    right: 0;
+    width: 100%;
+    background: #0b2b4c;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+    gap: 15px;
+    border-top: 1px solid #062033;
+  }
+
+  /* Show when menuOpen = true */
+  .rec-nav.open {
+    display: flex;
+  }
+
+  /* Links spacing */
+  .rec-nav a {
+    font-size: 16px;
+    padding: 5px 0;
+  }
+
+  /* Welcome text */
+  .rec-welcome {
+    margin-top: 10px;
+  }
+
+  /* Buttons full width inside mobile menu */
+  .rec-btn {
+    width: 100%;
+    text-align: left;
+  }
+}
+
+/* Desktop view unchanged */
+@media (min-width: 769px) {
+  .rec-menu-toggle {
+    display: none;
+  }
+}

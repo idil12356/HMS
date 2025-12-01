@@ -1,12 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
-import "./DoctorNavbar.css"; // design-ka asalka ah
-import "./PatientNavbar.css"; // optional for shared styles
+import "./DoctorNavbar.css";
 
 import { supabase } from "../supabaseClient";
 
 export default function DoctorNavbar({ doctor, setDoctor }) {
   const navigate = useNavigate();
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const handleLogout = async () => {
     await supabase.auth.signOut();
@@ -25,21 +25,30 @@ export default function DoctorNavbar({ doctor, setDoctor }) {
           </h1>
         </div>
 
-        {/* Navigation Links */}
-        <nav>
-          <NavLink to="/doctor/dashboard" className={({ isActive }) => isActive ? "active" : ""}>
+        {/* Hamburger Button */}
+        <div className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
+          ☰
+        </div>
+
+        {/* Navigation */}
+        <nav className={menuOpen ? "open" : ""}>
+          <NavLink to="/doctor/dashboard" className={({ isActive }) => isActive ? "active" : ""} onClick={() => setMenuOpen(false)}>
             Dashboard
           </NavLink>
-          <NavLink to="/doctor/my-appointments" className={({ isActive }) => isActive ? "active" : ""}>
+
+          <NavLink to="/doctor/my-appointments" className={({ isActive }) => isActive ? "active" : ""} onClick={() => setMenuOpen(false)}>
             My Appointments
           </NavLink>
-          <NavLink to="/doctor/patients" className={({ isActive }) => isActive ? "active" : ""}>
+
+          <NavLink to="/doctor/patients" className={({ isActive }) => isActive ? "active" : ""} onClick={() => setMenuOpen(false)}>
             Patients
           </NavLink>
-          <NavLink to="/doctor/write-prescription" className={({ isActive }) => isActive ? "active" : ""}>
+
+          <NavLink to="/doctor/write-prescription" className={({ isActive }) => isActive ? "active" : ""} onClick={() => setMenuOpen(false)}>
             Write Prescription
           </NavLink>
-          <NavLink to="/doctor/medical-records" className={({ isActive }) => isActive ? "active" : ""}>
+
+          <NavLink to="/doctor/medical-records" className={({ isActive }) => isActive ? "active" : ""} onClick={() => setMenuOpen(false)}>
             Medical Records
           </NavLink>
 
@@ -52,10 +61,11 @@ export default function DoctorNavbar({ doctor, setDoctor }) {
             </>
           ) : (
             <>
-              <NavLink to="/login" className="nav-btn login-btn">
+              <NavLink to="/login" className="nav-btn login-btn" onClick={() => setMenuOpen(false)}>
                 Login
               </NavLink>
-              <NavLink to="/signup" className="nav-btn signup-btn">
+
+              <NavLink to="/signup" className="nav-btn signup-btn" onClick={() => setMenuOpen(false)}>
                 Signup
               </NavLink>
             </>
