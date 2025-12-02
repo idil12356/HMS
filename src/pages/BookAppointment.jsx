@@ -2,8 +2,18 @@ import React, { useState, useEffect } from "react";
 import "./BookAppointment.css";
 import { supabase } from "../supabaseClient";
 import bgImg from "../assets/book1.jpg";
+import { useNavigate } from "react-router-dom";
 
-const BookAppointment = () => {
+const BookAppointment = ({ patient }) => {
+  const navigate = useNavigate();
+
+  // Haddii uusan login ahayn → login page u dir
+  useEffect(() => {
+    if (!patient) {
+      navigate("/login");
+    }
+  }, [patient]);
+
   const [formData, setFormData] = useState({
     fullName: "",
     phone: "",
@@ -18,24 +28,21 @@ const BookAppointment = () => {
   const [doctors, setDoctors] = useState([]);
   const [confirmation, setConfirmation] = useState(false);
 
-  // FETCH DOCTORS (ALL OR BY SPECIALTY)
+  // Fetch doctors based on specialty
   const fetchDoctors = async () => {
     try {
-      let query = supabase.from("doctors").select("*");
-      if (formData.specialty) {
-        query = query.eq("specialty", formData.specialty);
-      }
-      const { data, error } = await query;
+      let q = supabase.from("doctors").select("*");
+      if (formData.specialty) q = q.eq("specialty", formData.specialty);
+
+      const { data, error } = await q;
       if (error) throw error;
 
       setDoctors(data || []);
-      console.log("Doctors fetched:", data);
     } catch (err) {
-      console.error("Error fetching doctors:", err.message);
+      console.error(err);
     }
   };
 
-  // Fetch doctors whenever specialty changes
   useEffect(() => {
     fetchDoctors();
   }, [formData.specialty]);
@@ -46,55 +53,60 @@ const BookAppointment = () => {
     setFormData((prev) => ({
       ...prev,
       [name]: value,
-      ...(name === "specialty" ? { doctor: "" } : {}), // reset doctor if specialty changes
+      ...(name === "specialty" ? { doctor: "" } : {}),
     }));
-
-    if (name === "specialty") setDoctors([]); // clear old doctors
   };
 
-  // SUBMIT APPOINTMENT
-const handleSubmit = async (e) => {
-  e.preventDefault();
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-  // Required check for everything except notes
-  if (!formData.fullName || !formData.phone || !formData.specialty || !formData.doctor || !formData.date || !formData.time) {
-    alert("Please fill in all required fields.");
-    return;
-  }
+    // Hubi required fields
+    if (
+      !formData.fullName ||
+      !formData.phone ||
+      !formData.specialty ||
+      !formData.doctor ||
+      !formData.date ||
+      !formData.time
+    ) {
+      alert("Please fill all required fields.");
+      return;
+    }
 
-  // notes is optional
-  const { error } = await supabase.from("appointments").insert([
-    {
-      full_name: formData.fullName,
-      phone: formData.phone,
-      email: formData.email || null,
-      specialty: formData.specialty,
-      doctor: formData.doctor,
-      date: formData.date,
-      time: formData.time,
-      notes: formData.notes || null,
-    },
-  ]);
+    // Kaydi appointment adoon isticmaalin patient_id
+    const { error } = await supabase.from("appointments").insert([
+      {
+        full_name: formData.fullName,
+        phone: formData.phone,
+        email: formData.email || null,
+        specialty: formData.specialty,
+        doctor: formData.doctor,
+        date: formData.date,
+        time: formData.time,
+        notes: formData.notes || null,
+        status: "Pending", // default status
+      },
+    ]);
 
-  if (error) {
-    alert(`Failed to book appointment: ${error.message}`);
-    return;
-  }
+    if (error) {
+      alert(`Failed to book appointment: ${error.message}`);
+      return;
+    }
 
-  setConfirmation(true);
+    setConfirmation(true);
 
-  setFormData({
-    fullName: "",
-    phone: "",
-    email: "",
-    specialty: "",
-    doctor: "",
-    date: "",
-    time: "",
-    notes: "",
-  });
-};
-
+    // Clear form
+    setFormData({
+      fullName: "",
+      phone: "",
+      email: "",
+      specialty: "",
+      doctor: "",
+      date: "",
+      time: "",
+      notes: "",
+    });
+  };
 
   return (
     <div
@@ -114,7 +126,7 @@ const handleSubmit = async (e) => {
             required
           />
 
-          <label>Phone Number</label>
+          <label>Phone</label>
           <input
             type="tel"
             name="phone"
@@ -123,7 +135,7 @@ const handleSubmit = async (e) => {
             required
           />
 
-          <label>Email Address</label>
+          <label>Email</label>
           <input
             type="email"
             name="email"
@@ -137,14 +149,15 @@ const handleSubmit = async (e) => {
             name="specialty"
             value={formData.specialty}
             onChange={handleChange}
+            required
           >
-            <option value="">All Specialties</option>
+            <option value="">Select Specialty</option>
             <option value="Cardiology">Cardiology</option>
             <option value="Neurology">Neurology</option>
             <option value="Pediatrics">Pediatrics</option>
           </select>
 
-          <label>Select Doctor</label>
+          <label>Doctor</label>
           <select
             name="doctor"
             value={formData.doctor}
@@ -152,38 +165,21 @@ const handleSubmit = async (e) => {
             required
           >
             <option value="">Select Doctor</option>
-            {doctors.map((doc) => (
-              <option key={doc.id} value={doc.full_name}>
-                {doc.full_name} — {doc.specialty}
+            {doctors.map((d) => (
+              <option key={d.id} value={d.full_name}>
+                {d.full_name} — {d.specialty}
               </option>
             ))}
           </select>
 
-          <label>Appointment Date</label>
-          <input
-            type="date"
-            name="date"
-            value={formData.date}
-            onChange={handleChange}
-            required
-          />
+          <label>Date</label>
+          <input type="date" name="date" value={formData.date} onChange={handleChange} required />
 
-          <label>Appointment Time</label>
-          <input
-            type="time"
-            name="time"
-            value={formData.time}
-            onChange={handleChange}
-            required
-          />
+          <label>Time</label>
+          <input type="time" name="time" value={formData.time} onChange={handleChange} required />
 
-          <label>Additional Notes</label>
-<textarea
-  name="notes"
-  value={formData.notes}
-  onChange={handleChange}
-  placeholder="Optional"
-/>
+          <label>Notes</label>
+          <textarea name="notes" value={formData.notes} onChange={handleChange} placeholder="Optional" />
 
           <input type="submit" value="Book Now" />
         </form>
